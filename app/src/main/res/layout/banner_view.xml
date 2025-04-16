@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/tappx_white">
+
+    <!-- Header -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/header"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/tappx_red"
+        android:padding="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Logo -->
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/logo_tappx"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tappx SDK App"
+            android:fontFamily="@font/faktum_semibold"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:textSize="28sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- Back to MainView -->
+        <ImageView
+            android:id="@+id/backArrow"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/arrow"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:tint="@android:color/white"
+            android:onClick="onClickGoMainView"
+            android:layout_marginEnd="10dp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <!-- Ad Format -->
+    <TextView
+        android:id="@+id/adFormatText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Banner or MREC"
+        android:textSize="24sp"
+        android:textColor="@color/tappx_red"
+        android:fontFamily="@font/ibm_plexsans"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/header"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"/>
+
+    <LinearLayout
+        android:id="@+id/adContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="60dp"
+        app:layout_constraintTop_toBottomOf="@id/adFormatText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Banner de Tappx -->
+        <com.tappx.sdk.android.TappxBanner
+            android:id="@+id/tappx_banner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:txAdSize="300x250"
+            app:txAppKey="pub-64678-android-2499" />
+    </LinearLayout>
+
+
+
+
+    <!-- Status Block -->
+    <LinearLayout
+        android:id="@+id/linearLayouBottom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="90dp"
+        android:orientation="vertical"
+        android:background="@color/tappx_gray"
+        android:gravity="center_horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/adContainer"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/statusLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="15dp"
+            android:fontFamily="@font/ibm_plexsans"
+            android:text="Status"
+            android:textColor="@color/tappx_purple"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center" />
+
+        <!-- ScrollView for Event Logs -->
+        <ScrollView
+            android:id="@+id/statusScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/rounded_black_bg"
+            android:padding="8dp"
+            android:layout_marginBottom="40dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp">
+
+            <TextView
+                android:id="@+id/statusLog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="4dp"
+                android:text=""
+                android:textColor="@android:color/white"
+                android:textSize="16sp" />
+        </ScrollView>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

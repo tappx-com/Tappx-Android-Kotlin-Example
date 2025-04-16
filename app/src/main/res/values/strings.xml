@@ -1,0 +1,10 @@
+<resources>
+    <!-- Start Tappx config -->
+    <string name="tappx_key">pub-64678-android-2499</string>
+    <string name="endpoint">sdk1234test</string>
+    <!-- End Tappx config -->
+
+    <string name="app_name">Tappx SDK App</string>
+    <string name="slogan">Techsoulogy in everything we do</string>
+    <string name="tappx_sdk_version">SDK Version: </string>
+</resources>
