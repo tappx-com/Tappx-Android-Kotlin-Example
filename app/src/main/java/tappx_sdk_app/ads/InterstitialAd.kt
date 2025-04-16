@@ -84,11 +84,13 @@ class InterstitialAd(
 
 
     private fun updateLog(message: String) {
-        if (statusLog.text.isNotEmpty()) {
-            statusLog.append("\n$message")
+        val currentText = statusLog.text.toString()
+        val newText = if (currentText.isNotEmpty()) {
+            "$message\n$currentText"
         } else {
-            statusLog.append(message)
+            message
         }
+        statusLog.text = newText
         Log.e("Tappx SDK", message)
     }
 }
