@@ -1,6 +1,6 @@
 # Tappx SDK App for Android (Kotlin)
 
-**Build status**: ✅ _Developed_
+**Build status**: ✅ _Released_
 
 Tappx SDK App is a sample Android application built in **Kotlin** to demonstrate the integration and usage of the **Tappx advertising SDK**. The app includes examples of rewarded, interstitial, MREC, and banner ad formats, along with toggles and logging for testing and debugging purposes.
 
