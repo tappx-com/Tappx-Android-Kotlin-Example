@@ -23,11 +23,6 @@ class InterstitialAd(
     fun loadInterstitialAd() {
         interstitialAd = TappxInterstitial(context, context.getString(R.string.tappx_key))
         interstitialAd?.setAutoShowWhenReady(autoShow)
-        interstitialAd?.loadAd(
-            AdRequest()
-                .useTestAds(context.resources.getBoolean(R.bool.useTestAds))
-                .setEndpoint(context.getString(R.string.endpoint))
-        )
 
         // Add Listeners
         interstitialAd?.setListener(object : TappxInterstitialListener {
@@ -59,6 +54,11 @@ class InterstitialAd(
                 updateLog(message)
             }
         })
+        interstitialAd?.loadAd(
+            AdRequest()
+                .useTestAds(context.resources.getBoolean(R.bool.useTestAds))
+                .setEndpoint(context.getString(R.string.endpoint))
+        )
     }
 
     fun showInterstitialAd() {
