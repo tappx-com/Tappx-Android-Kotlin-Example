@@ -41,5 +41,5 @@ dependencies {
     androidTestImplementation libs.androidx.junit
     androidTestImplementation libs.androidx.espresso.core
     implementation 'com.tappx.sdk.android:tappx-sdk:4.+'
-    implementation 'com.tappx.sdk.android:omsdk:1.5.2'
+    implementation 'com.tappx.sdk.android:omsdk:1.5.5'
 }
